@@ -1,4 +1,4 @@
-﻿
+﻿@ModelType IEnumerable(Of UserVM)
 @Code
     Layout = Nothing
 End Code
@@ -6,26 +6,42 @@ End Code
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
 <body>
-    <h1> 
-        @ViewBag.Title
-    </h1>
-    <h2>
-        @ViewData("school")
+    <h2>List</h2>
 
-    </h2>
-    <h3>
-        @TempData("TempData")
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Function(model) model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Function(model) model.LastName)
+            </th>
 
-    </h3>
-    <div>
+            <th></th>
+        </tr>
 
-       <ViewBag>ddddd</ViewBag> 
+        @For Each item In Model
+            @<tr>
+                <td>
+                    @Html.DisplayFor(Function(modelItem) item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(Function(modelItem) item.LastName)
+                </td>
 
-    </div><input type="" name="name" value="some input" />
+                <td>
+                    @Html.ActionLink("Edit", "Edit", New With {.id = item.ID}) |
+                    @Html.ActionLink("Details", "Details", New With {.id = item.ID}) |
+                    @Html.ActionLink("Delete", "Delete", New With {.id = item.ID})
+                </td>
+            </tr>
+        Next
+
+    </table>
+
 </body>
 </html>
