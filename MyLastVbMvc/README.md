@@ -5,9 +5,9 @@
 steps:
 1) Create New Empty MVC Project
 2) Create New ProductModel “ProductVM”
-    a.CatalogID
-    b.Name
-    c.Price
+    #a.CatalogID
+    #b.Name
+    #c.Price
     d.InStock
     e.Image
 3) Create new Controller ProductController
