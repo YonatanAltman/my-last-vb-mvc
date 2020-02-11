@@ -17,7 +17,12 @@ Namespace Controllers
         End Function
 
 
-        Function ConvertProductsToVms(products As List(Of Product)) As List(Of ProductVM)
+
+
+#Region "PRIVATE FUNCTIONS"
+
+
+        Private Function ConvertProductsToVms(products As List(Of Product)) As List(Of ProductVM)
             Dim vms = New List(Of ProductVM)
             For Each p In products
                 vms.Add(ConvertProductToVm(p))
@@ -31,7 +36,7 @@ Namespace Controllers
 
         End Function
 
-        Function ConvertProductToVm(product As Product) As ProductVM
+        Private Function ConvertProductToVm(product As Product) As ProductVM
             Dim vm = New ProductVM(
                 product.CatalogID,
                 product.Name,
@@ -44,6 +49,7 @@ Namespace Controllers
 
         End Function
 
+#End Region
 
     End Class
 End Namespace
