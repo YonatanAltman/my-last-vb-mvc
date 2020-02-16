@@ -1,5 +1,6 @@
 ﻿Imports System.Web.Mvc
 Imports Entities
+Imports MyLastVbMvc.Models
 Imports UserManager
 
 Namespace Controllers
@@ -14,6 +15,18 @@ Namespace Controllers
             Dim prodctusVm = ConvertProductsToVms(products)
 
             Return View(prodctusVm)
+        End Function
+
+        Function Create() As ActionResult
+
+
+            Return View()
+        End Function
+        <HttpPost>
+        Function Create(ByVal collection As FormCollection) As ActionResult
+
+
+            Return View()
         End Function
 
 

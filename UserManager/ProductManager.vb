@@ -25,6 +25,13 @@ Public Class ProductManager
         Return ProductList
     End Function
     Function GetProduct(catalogId As String) As Product
+        'For Each product In ProductList
+        '    If (product.CatalogID = catalogId) Then
+        '        Return product
+
+        '    End If
+        'Next
+
         Return ProductList.Find(Function(p) p.CatalogID = catalogId)
 
     End Function

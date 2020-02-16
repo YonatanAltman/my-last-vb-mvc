@@ -1,4 +1,4 @@
-﻿@ModelType IEnumerable(Of ProductVM)
+﻿@ModelType IEnumerable(Of Models.ProductVM)
 @Code
     Layout = Nothing
 End Code
